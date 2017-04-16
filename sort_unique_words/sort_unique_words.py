@@ -15,7 +15,7 @@ def main():
     word_list = in_file.read().split()
     unique_list = []
     for item in word_list:
-        # Convert eat item to lowercase and strip off the punctuation
+        # Convert each item to lowercase and strip off the punctuation
         lowercase_item = item.lower().translate(None, string.punctuation)
         # If the item isn't in the list, add it
         if lowercase_item not in unique_list:
