@@ -2,10 +2,10 @@
 
 import requests, json, re, datetime
 
-base_url = "https://search-devero-logstash-logs-o66i5giakedqco7pd4i5q5kigi.us-west-2.es.amazonaws.com:443/"
+base_url = "https://ES-ENDPOINT.REGION.es.amazonaws.com:443/"
 prefix = 'logstash-'
 index_date_format = '%Y.%m.%d'
-num_days_to_retain = 14
+num_days_to_retain = 10
 
 # Read in the names of all indices from elasticsearch
 response = requests.get(base_url +'_cat/indices?format=json')
