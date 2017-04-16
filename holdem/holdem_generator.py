@@ -95,8 +95,8 @@ def main():
     parser.add_argument("number_of_runs", help="number_of_runs", type=int)
     args = parser.parse_args()
     # Create the logfile
-    logfile_name = "holdem_logfile-" + str(int(time.time())) + ".txt"
-    logfile = open(logfile_name, "w+")
+    logfile_name = "holdem_logfile-" + str(int(time.time())) + ".log"
+    logfile = open("logs/" + logfile_name, "w+")
     # Deal the player cards, community cards, and record the outcome to the logfile
     for run_counter in range(1,args.number_of_runs+1):
         # Create deck of cards
