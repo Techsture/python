@@ -7,7 +7,7 @@
 # 3.) If disk usage is over 85%, fail the Jenkins job.
 
 
-from devero import ec2
+from custom_modules import ec2
 import json
 import subprocess
 import sys

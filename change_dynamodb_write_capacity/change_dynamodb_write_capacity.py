@@ -10,7 +10,7 @@
 
 
 import argparse
-from devero import dynamodb
+from custom_modules import dynamodb
 import subprocess
 
 
