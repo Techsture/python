@@ -50,6 +50,8 @@ def create_deck():
         for j in range(1,14):
             if j == 1:
                 card = "A" + suit
+            elif j == 10:
+                card = "T" + suit
             elif j == 11:
                 card = "J" + suit
             elif j == 12:
