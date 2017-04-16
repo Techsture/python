@@ -17,7 +17,7 @@ def main():
         else:
           full_filename = directory + "/" + filename
           # Copy the file to S3
-          cmd = ['s3put', '-b', 'devero-logstash-backups', '--region', 'us-west-2', '-p', '/logs/', full_filename]
+          cmd = ['s3put', '-b', 'BUCKET_NAME', '--region', 'REGION', '-p', '/logs/', full_filename]
           call(cmd)
           # Delete the file after it's been copied
           cmd = ['rm', '-rf', full_filename]
