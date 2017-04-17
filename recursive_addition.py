@@ -18,6 +18,9 @@ def main():
     if args.integer > 997:
         print("Number is too large!")
         exit()
+    elif args.integer < 1:
+	print("Number is too small!")
+	exit()
     else:
         print(recursive_add(args.integer))
 
