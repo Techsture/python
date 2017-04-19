@@ -19,7 +19,7 @@ def main():
         month = message[0]
         day = message[1]
         time = message[2].split(':')
-        time_stamp = month + ' ' + day + ' ' + ' ' + time[0] + ':' + time[1]
+        time_stamp = month + ' ' + day + ' ' + time[0] + ':' + time[1]
         if time_stamp not in minute_counter:
             minute_counter[time_stamp] = 1
         else:
