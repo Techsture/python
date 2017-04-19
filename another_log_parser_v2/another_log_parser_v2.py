@@ -15,12 +15,13 @@
 # ---------- end sample output ------------
 # Note: It is important that your program work with any arbitrary set of programs, not just the ones in the example output.
 
+# TODO: This does not work correctly yet.
+
 import re
 
 def main():
     filename = open('var/log/messages', 'r')
     minute_counter = {}
-    prog_counter = {}
     pid_pattern = re.compile(r"\:|\[\d*\]\:|\(.*\)")
     for line in filename.readlines():
         message = line.split()
@@ -30,27 +31,25 @@ def main():
         time_stamp = month + ' ' + day + ' ' + time[0] + ':' + time[1]
         prog_name = re.sub(pid_pattern, '', message[4])
         if time_stamp not in minute_counter:
-            minute_counter[time_stamp] = 1
-            if prog_name not in prog_counter:
-                prog_counter[prog_name] = 1
+            minute_counter[time_stamp] = {}
+            if prog_name not in minute_counter[time_stamp]:
+                minute_counter[time_stamp][prog_name] = 1
             else:
-                prog_counter[prog_name] += 1
+                minute_counter[time_stamp][prog_name] += 1
         else:
-            minute_counter[time_stamp] += 1
-            if prog_name not in prog_counter:
-                prog_counter[prog_name] = 1
+            if prog_name not in minute_counter[time_stamp]:
+                minute_counter[time_stamp][prog_name] = 1
             else:
-                prog_counter[prog_name] += 1
+                minute_counter[time_stamp][prog_name] += 1
+    print("%s\n" % minute_counter)
     header_string = "minute,number_of_messages,"
-    for prog_name in sorted(prog_counter.keys()):
+    for prog_name in sorted(minute_counter[time_stamp].keys()):
         header_string += prog_name + ','
     print(header_string.rstrip(','))
-    print(minute_counter)
-    print(prog_counter)
-    for time in sorted(minute_counter.keys()):
-        output_string = time + ","  + str(minute_counter[time]) + ","
-        for prog_name in sorted(prog_counter.keys()):
-            output_string += str(prog_counter[prog_name]) + ','
+    for time_stamp in sorted(minute_counter.keys()):
+        output_string = time_stamp + ","  + str(minute_counter[time_stamp]) + ","
+        for prog_name in sorted(minute_counter[time_stamp].keys()):
+            output_string += str(minute_counter[time_stamp][prog_name]) + ','
         print(output_string.rstrip(','))
 
 
