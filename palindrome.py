@@ -11,8 +11,7 @@ def main():
     args = parser.parse_args()
     # Actual program starts here:
     parsed_string = args.parameter.lower()
-    reversed_string = parsed_string[::-1]
-    if parsed_string == reversed_string:
+    if parsed_string == parsed_string[::-1]:
         print("%s is a palindrome!" % args.parameter)
     else:
         print("%s is not a palindrome." % args.parameter)
