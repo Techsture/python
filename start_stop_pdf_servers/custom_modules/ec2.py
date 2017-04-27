@@ -3,7 +3,7 @@ import sys
 
 """ Global Vars used by all funcs """
 regions = ["us-east-1", "us-west-1", "us-west-2"]
-vpc_ids = { 'us-east-1' : 'vpc-12345678', 'us-west-1' : 'vpc-23456789', 'us-west-2' : 'vpc-34567890' }
+vpc_ids = { 'us-east-1' : 'vpc-9a80e1fe', 'us-west-1' : 'vpc-a66ce6c3', 'us-west-2' : 'vpc-53a69f36' }
 
 def get_ec2_connection(region):
     conn = boto3.client('ec2', region_name=region)
