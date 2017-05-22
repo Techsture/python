@@ -9,20 +9,20 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("size", help="size of diamond", type=int)
     args = parser.parse_args()
-    j = args.size
-    k = args.size
-    p = 1
-    for i in range(args.size + 1):
+    top_half = args.size
+    bottom_half = args.size
+    spaces = 1
+    for points in range(args.size + 1):
         # This 'if' just skips printing the blank line at the beginning.
-        if i == 0:
-            k -= 1
+        if points == 0:
+            top_half -= 1
             continue
-        print " " * k," *" *  i
-        k -= 1
-    while j > 1:
-        j -= 1
-        print " " * p," *" * j
-        p += 1
+        print " " * top_half," ." *  points
+        top_half -= 1
+    while bottom_half > 1:
+        bottom_half -= 1
+        print " " * spaces," ." * bottom_half
+        spaces += 1
 
 
 if __name__ == "__main__":
