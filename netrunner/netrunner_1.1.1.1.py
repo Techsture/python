@@ -17,10 +17,14 @@ def main():
   core_set = random.choice(core_list)
   expansion_set = random.choice(expansion_list)
   datapack = random.choice(datapack_list)
+  corp_card = random.choice(card_list)
+  runner_card = random.choice(card_list)
   print("Your Netrunner 1.1.1 configuration is:")
   print("1 \"{}\" set.".format(core_set))
   print("1 \"{}\" expansion.".format(expansion_set))
   print("1 \"{}\" datapack.".format(datapack))
+  print("1 \"{}\" card for the corp.".format(corp_card['title']))
+  print("1 \"{}\" card for the runner.".format(runner_card['title']))
   exit()
 
 
