@@ -17,7 +17,7 @@ def trigger_incident(message):
       "event_type": "trigger",
       "description": message,
       "client": "API",
-      "client_url": "https://www.devero.com",
+      "client_url": "https://www.COMPANY.com",
       "details": {
         "ping time": "1500ms",
         "load avg": 0.75
