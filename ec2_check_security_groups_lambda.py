@@ -1,7 +1,8 @@
 #!/usr/bin/python
 
 # This script checks all security groups in our account for 0.0.0.0/0.
-# We can extend this as necessary in the future.
+# It can easily be extended to add other CIDR ranges as necessary in the future.
+# Replace anything in the <>'s with your account specifics.
 
 import boto3
 import json
